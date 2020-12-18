@@ -1,0 +1,53 @@
+InvoiceNo INT,StockCode STRING, Description STRING,Quantity INT, InvoiceDate STRING,UnitPrice FLOAT, CustomerID STRING,Country STRING
+
+
+LOAD DATA INPATH '/home/cloudera/Downloads/OnlineRetail.txt' OVERWRITE INTO TABLE Project1;
+
+/home/cloudera/Downloads
+
+invoiceno int        |          |
+| stockcode    | string     |          |
+| description  | string     |          |
+| quantity     | int        |          |
+| invoicedate  | string     |          |
+| unitprice    | float      |          |
+| customerid   | string     |          |
+| country      | string
+
+
+create table loand(id STRING,member_id STRING,loan_amnt STRING,funded_amnt STRING,funded_amnt_inv STRING,term STRING,int_rate   STRING,installment STRING,grade STRING,sub_grade STRING,emp_title STRING,emp_length STRING,home_ownership STRING,annual_inc STRING,verification_status STRING,issue_d STRING,loan_status STRING,pymnt_plan STRING,url STRING,desc STRING,purpose STRING,title STRING,zip_code STRING,addr_state STRING,dti STRING,delinq_2yrs STRING,earliest_cr_line STRING,inq_last_6mths STRING,mths_since_last_delinq STRING,mths_since_last_record STRING,open_acc STRING,pub_rec STRING,revol_bal STRING,revol_util STRING,total_acc STRING,initial_list_status STRING,out_prncp STRING,out_prncp_inv STRING,total_pymnt STRING,total_pymnt_inv STRING,total_rec_prncp STRING,total_rec_int STRING,total_rec_late_fee STRING,recoveries STRING, collection_recovery_fee STRING,last_pymnt_d STRING,last_pymnt_amnt STRING,next_pymnt_d STRING,last_credit_pull_d STRING, collections_12_mths_ex_med STRING,mths_since_last_major_derog STRING,policy_code STRING,application_type STRING,annual_inc_joint STRING,dti_joint STRING,verification_status_joint STRING,acc_now_delinq STRING,tot_coll_amt STRING, tot_cur_bal STRING,open_acc_6m STRING,open_il_6m STRING,open_il_12m STRING,open_il_24m STRING,mths_since_rcnt_il STRING, total_bal_il STRING,il_util STRING,open_rv_12m STRING,open_rv_24m STRING,max_bal_bc STRING,all_util STRING,total_credit_rv STRING,inq_fi STRING,total_fi_tl STRING,inq_last_12m STRING) row format delimited fields terminated by "," stored as textfile tblproperties ("skip.header.line.count"="2");
+
+
+create table rejectd(Amount_Requested STRING,Application_Date STRING,Loan_Title STRING,Risk_Score STRING,Debt_To_Income_Ratio STRING,Zip_Code STRING,State STRING,Employment_Length STRING,Policy_Code STRING) row format delimited fields terminated by "," stored as textfile tblproperties("skip.header.line.coun"="1"); 
+
+LOAD DATA LOCAL INPATH '/home/cloudera/Downloads/Project2/LoanStats3d.csv' OVERWRITE INTO TABLE loand;
+
+
+id STRING,member_id STRING,loan_amnt STRING,funded_amnt STRING,funded_amnt_inv STRING,term STRING,int_rate   STRING,installment STRING,grade STRING,sub_grade STRING,emp_title STRING,emp_length STRING,home_ownership STRING,annual_inc STRING,verification_status STRING,issue_d STRING,loan_status STRING,pymnt_plan STRING,url STRING,desc STRING,purpose STRING,
+title STRING,zip_code STRING,addr_state STRING,dti STRING,delinq_2yrs STRING,earliest_cr_line STRING,inq_last_6mths STRING,mths_since_last_delinq STRING,mths_since_last_record STRING,open_acc STRING,pub_rec STRING,revol_bal STRING,revol_util STRING,total_acc STRING,initial_list_status STRING,out_prncp STRING,out_prncp_inv STRING,total_pymnt STRING,total_pymnt_inv STRING,total_rec_prncp STRING,total_rec_int STRING,total_rec_late_fee STRING,recoveries STRING, collection_recovery_fee STRING,last_pymnt_d STRING,last_pymnt_amnt STRING,next_pymnt_d STRING,last_credit_pull_d STRING, collections_12_mths_ex_med STRING,mths_since_last_major_derog STRING,policy_code STRING,application_type STRING,annual_inc_joint STRING,dti_joint STRING,verification_status_joint STRING,acc_now_delinq STRING,tot_coll_amt STRING, tot_cur_bal STRING,open_acc_6m STRING,open_il_6m STRING,open_il_12m STRING,open_il_24m STRING,mths_since_rcnt_il STRING, total_bal_il STRING,il_util STRING,open_rv_12m STRING,open_rv_24m STRING,max_bal_bc STRING,all_util STRING,total_credit_rv STRING,inq_fi STRING,total_fi_tl STRING,inq_last_12m STRING
+
+Amount_Requested,Application_Date,Loan Title,Risk_Score,Debt-To-Income Ratio,Zip Code,State,Employment Length,Policy Code
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
