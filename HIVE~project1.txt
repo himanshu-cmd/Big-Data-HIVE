@@ -1,0 +1,12 @@
+create table project1(InvoiceNo INT,StockCode STRING, Description STRING,Quantity INT, InvoiceDate STRING,UnitPrice FLOAT,
+CustomerID STRING,Country STRING) ROW FORMAT DELIMITED FILEDS TERMINATED BY '\t' stored as textfile;
+
+To remove header of textfile : ALTER TABLE project1 SET TBLPROPERTIES ("skip.header.line.count"="1");
+
+						OR
+
+create table project1(InvoiceNo INT,StockCode STRING, Description STRING,Quantity INT, InvoiceDate STRING,UnitPrice FLOAT,
+CustomerID STRING,Country STRING) ROW FORMAT DELIMITED FILEDS TERMINATED BY '\t' tblproperties('skip.header.line.count'='1')
+stored as textfile;
+
+LOAD DATA INPATH '/home/cloudera/Downloads/OnlineRetail.txt' OVERWRITE INTO TABLE project1;
